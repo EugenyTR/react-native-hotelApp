@@ -20,7 +20,7 @@ const {width} = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
 const HomeScreen = ({navigation}) => {
-  const categories = ['All', 'Popular', 'Top Rated', 'Featured', 'Luxury'];
+  const categories = ['Все', 'Популярные', 'Топ', 'Рекомендации', 'Люкс'];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
@@ -83,8 +83,8 @@ const HomeScreen = ({navigation}) => {
           <Animated.View style={{...style.cardOverLay, opacity}} />
           <View style={style.priceTag}>
             <Text
-              style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>
-              ${hotel.price}
+              style={{color: COLORS.white, fontSize: 16, fontWeight: 'bold'}}>
+              {hotel.price} руб.
             </Text>
           </View>
           <Image source={hotel.image} style={style.cardImage} />
@@ -114,7 +114,7 @@ const HomeScreen = ({navigation}) => {
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.grey} />
               </View>
-              <Text style={{fontSize: 10, color: COLORS.grey}}>365reviews</Text>
+              <Text style={{fontSize: 10, color: COLORS.grey}}>44отзывов</Text>
             </View>
           </View>
         </Animated.View>
@@ -153,13 +153,13 @@ const HomeScreen = ({navigation}) => {
       <View style={style.header}>
         <View style={{paddingBottom: 15}}>
           <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-            Find your hotel
+            Найди отель
           </Text>
           <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 30, fontWeight: 'bold'}}>in </Text>
+            <Text style={{fontSize: 30, fontWeight: 'bold'}}>в </Text>
             <Text
               style={{fontSize: 30, fontWeight: 'bold', color: COLORS.primary}}>
-              Paris
+              Новосибирске
             </Text>
           </View>
         </View>
@@ -169,7 +169,7 @@ const HomeScreen = ({navigation}) => {
         <View style={style.searchInputContainer}>
           <Icon name="search" size={30} style={{marginLeft: 20}} />
           <TextInput
-            placeholder="Search"
+            placeholder="Поиск"
             style={{fontSize: 20, paddingLeft: 10}}
           />
         </View>
@@ -204,9 +204,9 @@ const HomeScreen = ({navigation}) => {
             marginHorizontal: 20,
           }}>
           <Text style={{fontWeight: 'bold', color: COLORS.grey}}>
-            Top hotels
+            Лучшие отели
           </Text>
-          <Text style={{color: COLORS.grey}}>Show all</Text>
+          <Text style={{color: COLORS.grey}}>Все отели</Text>
         </View>
         <FlatList
           data={hotels}
@@ -266,8 +266,8 @@ const style = StyleSheet.create({
     borderTopRightRadius: 15,
   },
   priceTag: {
-    height: 60,
-    width: 80,
+    height: 50,
+    width: 100,
     backgroundColor: COLORS.primary,
     position: 'absolute',
     zIndex: 1,

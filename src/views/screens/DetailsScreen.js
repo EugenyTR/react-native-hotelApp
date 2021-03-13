@@ -69,7 +69,7 @@ const DetailsScreen = ({navigation, route}) => {
                 4.0
               </Text>
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365reviews</Text>
+            <Text style={{fontSize: 13, color: COLORS.grey}}>44отзыва</Text>
           </View>
           <View style={{marginTop: 20}}>
             <Text style={{lineHeight: 20, color: COLORS.grey}}>
@@ -86,7 +86,7 @@ const DetailsScreen = ({navigation, route}) => {
             alignItems: 'center',
           }}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Price per night
+            Стоимость за ночь
           </Text>
           <View style={style.priceTag}>
             <Text
@@ -96,7 +96,7 @@ const DetailsScreen = ({navigation, route}) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              ${item.price}
+              {item.price} руб.
             </Text>
             <Text
               style={{
@@ -105,13 +105,13 @@ const DetailsScreen = ({navigation, route}) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              +breakfast
+              +завтрак
             </Text>
           </View>
         </View>
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Book Now
+            Закажи сейчас
           </Text>
         </View>
       </View>
